@@ -142,6 +142,107 @@
 					</div>
 				</div> <!-- END: Section -->
 
+
+				<div class="Section">
+				    <h2 class="SectionHeader">embedlink()</h2>
+				    <p>
+				        <span class="Desc Where">Hvor: </span> Funktionen anvendes på såkaldte "visningssites" for de enkelte fag. <br/>
+				        <span class="Desc why">Hvorfor: </span> Funktionen er nødvendig idet den automatisk laver indlejringskode til lærene til anvendelse i moodle og fronter <br/>
+				        <span class="Desc How">Hvordan: </span> Funktionen har to komponenter: een til generering af link og en anden til styring fanerne til af valget mellem moodle og fronters indlejringskode. <br/>
+				        <span class="Desc Param">Argumenter: </span> Ingen  <br/>
+				        <span class="Desc Return">Output: </span> Ingen. <br/>
+				    </p>
+				    <pre class="brush: js;">
+				        function embedlink(obj) {
+								var UrlVarStr;
+								UrlVarStr = String(window.location).split("/", 3).join("/").replace("http", "https");
+								console.log("embedlink - UrlVarStr: " + UrlVarStr);
+
+								var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../", "/");
+								console.log("embedlink - HrefObj: " + HrefObj);
+
+								var embedFronter = '<iframe height="570" width="820" src="' + UrlVarStr + HrefObj + '"></iframe>';
+								var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
+
+								var embedArray = [embedMoodle, embedFronter];
+
+								var embedwrapping = "<div class='embedToggle'><p>Indsæt dette link i dit LMS eller på din webside</p><div class='tabcontainer'><div class='tab_1 tab activetab'>Fronter(embed)</div><div class='tab_2 tab'>Moodle(iframe)</div></div><div class='togglecontainer'><input class='embedtext' type='text' value='" + embedArray[0] + "'></input><a class='MetaDataLink' href='https://www.youtube.com/watch?v=vjh6z6EACqQ'>Hjælp til indlejring (embedding) </a></div></div>";
+
+								var embedWidth;
+								var embedHeight;
+
+
+								// Klik på embedding knapper funktionalitet:
+
+								//Hvis den man klikker på allerede har en parent...: 
+								if (obj.parent().parent().find(".embedToggle").length > 0) {
+								    $(".embedToggle").slideUp(150, function() {
+
+								        $(".embedToggle").remove();
+								        // Animation complete.
+								    });
+
+								} else {
+								    if ($(".embedToggle").length > 0) {
+								        // console.log("indeks: " + obj.parent().parent().index());
+								        $(".embedToggle").slideUp(150, function() {
+
+								            $(".embedToggle").remove();
+								            // Animation complete.
+								            obj.parent().parent().append(embedwrapping);
+								            $(".embedToggle").slideUp(0);
+								            $(".embedToggle").slideDown("slow");
+								            $(".tab").click(function() {
+
+								                var indeks = $(this).index();
+								                $(".tab").removeClass("activetab");
+								                $(this).addClass("activetab");
+								                //alert (indeks);
+								                changeLink(indeks);
+								            });
+
+								        });
+								        //
+
+								    } else {
+								        //console.log("indeks: " + obj.parent().parent().index());
+								        obj.parent().parent().append(embedwrapping);
+								        $(".embedToggle").slideUp(0);
+								        $(".embedToggle").slideDown("slow");
+								        $(".tab").click(function() {
+
+								            var indeks = $(this).index();
+								            $(".tab").removeClass("activetab");
+								            $(this).addClass("activetab");
+								            //alert (indeks);
+								            changeLink(indeks);
+								        });
+								    }
+								}
+
+
+								function changeLink(indeks) {
+
+								    console.log("clickede på noget")
+
+								    $(".embedtext").val(embedArray[indeks]);
+
+								}
+
+								$(".embedtext").click(function() {
+								    $(this).select();
+								});
+						}
+				    </pre>
+				    <div class="DemoWrapper">
+				        <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+				        <div class="DemoContainer">
+				            <div class="DemoCode"></div>  <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
+				            <iframe src="html/embedlink.html"></iframe>
+				        </div>
+				    </div>
+				</div>   <!-- END: Section -->
+
 				
 
 

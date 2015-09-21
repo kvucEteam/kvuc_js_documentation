@@ -96,29 +96,6 @@
 				<div id="TOC_position"></div> <!--  Denne liste opdateres automatisk  -->
 				
 
- 				<div class="Section">
-					<h2 class="SectionHeader">footer()</h2>
-					<p>
-						<span class="Desc Where">Hvor: </span> Funktionen blev udviklet til alle objekter i Engelsk B, og er anvendt der. <br/>
-						<span class="Desc Why">Hvorfor: </span> Hensigten med funktionen er at tilføje KVUC's footer på læringsobjekter i Engelsk B. <br/>
-						<span class="Desc How">Hvordan: </span>Funktionen finder elementer med klasserne "container" og "container-fluid" og tilføjer et div-tag af klassen "container-fluid" og "vuc_footer_wrapper" efter disse. I Div-tag'et er markup til KVUC's footer til Engelsk B.<br/>
-						<span class="Desc Param">Argumenter: </span>  Ingen.<br/>
-						<span class="Desc Return">Output: </span> Ingen.<br/>
-					</p>
-					<pre class="brush: js;">
-						function footer() {
-						    $(".container, .container-fluid").after("<div class='container-fluid vuc_footer_wrapper'><div class='col-xs-12 vuc_footer'><h2>Digitale læringsmaterialer på voksenuddannelser</h2><h6 class='footerText'>Udviklet af et produktionsfællesskab mellem otte VUC’er til anvendelse på de deltagende skoler: <br/> Hf og VUC Nordsjælland, VUC Hvidovre-Amager, VUC Roskilde, VUC Vestegnen, VUF, VUC Storstrøm, VUC Aarhus og Københavns VUC (KVUC).</h6> <h6 class='footerCopywrite'> Copyright 2015 </h6></div ></div >");
-						}
-					</pre>
-					<div class="DemoWrapper">
-						<div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
-						<div class="DemoContainer">
-							<div class="DemoCode"></div>
-							<iframe src="html/footer.html"></iframe>
-						</div>
-					</div>
-				</div> <!-- END: Section -->
-
 				<div class="Section">
 					<h2 class="SectionHeader">one_line_footer()</h2>
 					<p>
@@ -161,8 +138,8 @@
 								var HrefObj = obj.parent().parent().find("a").eq(0).attr("href").replace("../", "/");
 								console.log("embedlink - HrefObj: " + HrefObj);
 
-								var embedFronter = '<iframe height="570" width="820" src="' + UrlVarStr + HrefObj + '"></iframe>';
-								var embedMoodle = '<embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"></embed>';
+								var embedFronter = '&lt;iframe height="570" width="820" src="' + UrlVarStr + HrefObj + '"&gt;&lt;/iframe&gt;';
+								var embedMoodle = '&lt;embed height="670" width="970" src="' + UrlVarStr + HrefObj + '"&gt;&lt;/embed&gt;';
 
 								var embedArray = [embedMoodle, embedFronter];
 
@@ -243,57 +220,41 @@
 				    </div>
 				</div>   <!-- END: Section -->
 
-				
+				<div class="Section">
+				    <h2 class="SectionHeader">UserMsgBox()</h2>
+				    <p>
+				        <span class="Desc Where">Hvor: </span> Beskriv hvor funktionen anvendes..  <br/>
+				        <span class="Desc why">Hvorfor: </span> Beskriv behovet for denne funktion... <br/>
+				        <span class="Desc How">Hvordan: </span> En kort beskrivelse af hvordan funktionen virker... <br/>
+				        <span class="Desc Param">Argumenter: </span> Beskriv hvilke (om nogen) input/argumenter funktionen tager...  <br/>
+				        <span class="Desc Return">Output: </span> Beskriv retur data (om nogen) fra funktionen... <br/>
+				    </p>
+				    <pre class="brush: js;">
+				        UserMsgBox(TargetSelector, UserMsg) {
+							    var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
+							    HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
+							    HTML += UserMsg;
+							    HTML += "</div> </div>";
+							    $
+							    $(TargetSelector).prepend(HTML);
 
+							    $(".MsgBox_bgr").fadeIn("slow");
 
-				<div class="Section">
-					<h2 class="SectionHeader">a()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">c()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">b()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">e()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">d()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">f()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">g()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
-				<div class="Section">
-					<h2 class="SectionHeader">h()</h2>
-					<p> 
-						Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-					</p>
-				</div> 
+							    $(".MsgBox_bgr").click(function() {
+							        $(".MsgBox_bgr").fadeOut(200, function() {
+							            $(this).remove();
+							        });
+							    });
+						}
+				    </pre>
+				    <div class="DemoWrapper">
+				        <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+				        <div class="DemoContainer">
+				            <div class="DemoCode"></div>  <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
+				            <iframe src="html/UserMsgBox.html"></iframe>
+				        </div>
+				    </div>
+				</div>   <!-- END: Section -->
 
 
             </div>
@@ -318,6 +279,22 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 one_line_footer();
+
+                console.log("TATEXT: " + $("iframe").contents().find('.new_window_link').text()); // Dette fjerner "Åbn siden i sit eget vindue" i hver iframe.
+
+                $("iframe").contents().find('a.new_window_link').css( "background-color", "#BADA55" );
+
+                $( "iframe" ).each(function( index, element ) {
+                	console.log("TATEXT - " + index + " : " + $(element).contents().find('.new_window_link').height());
+	                $(element).contents().find('.new_window_link').hide();
+	            });
+
+    //             $(function(){
+				// 	var f = $('iframe');
+				// 	f.load(function(){ 
+				// 		f.contents().find('.new_window_link').hide(); 
+				// 	})
+				// });
             });
         </script>
 	</body>

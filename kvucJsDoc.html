@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>KVUC JS dokumentation</title>
-		<!-- http://www.robotstxt.org/meta.html -->
-		<meta name="robots" content="noindex, nofollow" />
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link type="text/css" rel="stylesheet" href="SyntaxHighlighter/styles/shCoreDefault.css"/>
-		<link rel="stylesheet" href="../library/css/styles.css" type="text/css" />
-	    <link rel="stylesheet" href="kvucJsDoc.css" type="text/css" />
+<head>
+    <title>KVUC JS dokumentation</title>
+    <!-- http://www.robotstxt.org/meta.html -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="SyntaxHighlighter/styles/shCoreDefault.css" />
+    <link rel="stylesheet" href="../library/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="kvucJsDoc.css" type="text/css" />
+    <!-- Nedenstående link til bootstrap CDN skal fjernes, men er der kun pag problemer med THANs work-flow -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
 
-	    <!-- Nedenstående link til bootstrap CDN skal fjernes, men er der kun pag problemer med THANs work-flow -->
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	
-	</head>
-	<body>
-		<div class="container-fluid MainWrap"> 
-            <div class="col-xs-12">
-                <h1>KVUC shared_script dokumentation</h1>
-
-                <h4>Introduktion</h4>
-                <p> 
-                	Når man vil gøre brug af “shared_funktions”, så er et overblik over de forskellige funktioner rigtig godt for hurtigt at benytte sig af disse. Til dette formål er der her lavet en demo-og-dokumentations-side (som kun eksisterer i work-flowet), meget lig den man finder i JQuerys dokumentation over deres funktioner. Ideen er at man får vist koden i funktionen og minimum et eksempel på anvendelsen af funktionen.
-                </p>
-
-                <h4>Hvordan</h4>
-                <p>
-                	For at tilføje en beskrivelse/dokumentation af en funktion, følger man blot anvisningerne i den nedenstående demo.
-                </p>
-                <div class="DemoWrapper">
-					<div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
-					<div class="DemoContainer">
-					    <p>
-					    	Kopier nedenstående HTML kode og tilføj de nødvendige forklaringer. 
-					    </p>
-						<pre class="brush: xml;">
+<body>
+    <div class="container-fluid MainWrap">
+        <div class="col-xs-12">
+            <h1>KVUC shared_script dokumentation</h1>
+            <h4>Introduktion</h4>
+            <p>
+                Når man vil gøre brug af “shared_funktions”, så er et overblik over de forskellige funktioner rigtig godt for hurtigt at benytte sig af disse. Til dette formål er der her lavet en demo-og-dokumentations-side (som kun eksisterer i work-flowet), meget lig den man finder i JQuerys dokumentation over deres funktioner. Ideen er at man får vist koden i funktionen og minimum et eksempel på anvendelsen af funktionen.
+            </p>
+            <h4>Hvordan</h4>
+            <p>
+                For at tilføje en beskrivelse/dokumentation af en funktion, følger man blot anvisningerne i den nedenstående demo.
+            </p>
+            <div class="DemoWrapper">
+                <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+                <div class="DemoContainer">
+                    <p>
+                        Kopier nedenstående HTML kode og tilføj de nødvendige forklaringer.
+                    </p>
+                    <pre class="brush: xml;">
 							&lt;div class="Section"&gt;
 									&lt;h2 class="SectionHeader"&gt;my_shared_function()&lt;/h2&gt;
 									&lt;p&gt;
@@ -61,75 +58,75 @@
 									&lt;/div&gt;
 							&lt;/div&gt;   &lt;!-- END: Section --&gt;
 						</pre>
-						<p>
-					    	Vigtigt: klassen ".DemoCode" er reserveret til automatisk indsætning af koden fra iframe-tag'et, som man kan vælge at tilføje hvis 
-					    	man ønsker at lave en demo på en seprat side.
-					    </p>
-
-					    <p>
-					    	For at tilføje koden fra en iframe, indsættes funktionen "ReturnAjaxData()" med funktionens navn i iframens "src" property. Her er der vigtig at navet på HTML-filen der skal iframes, er det samme som navnet der skrives i div-tag'et ".SectionHeader". Ved at navnet i div-taget ".SectionHeader" og filnavnet er ens, kan koden fra filen automatisk indsætes i tag'et med klassen ".DemoCode".  
-					    </p>
-
-					    <pre class="brush: xml;">
+                    <p>
+                        Vigtigt: klassen ".DemoCode" er reserveret til automatisk indsætning af koden fra iframe-tag'et, som man kan vælge at tilføje hvis man ønsker at lave en demo på en seprat side.
+                    </p>
+                    <p>
+                        For at tilføje koden fra en iframe, indsættes funktionen "ReturnAjaxData()" med funktionens navn i iframens "src" property. Her er der vigtig at navet på HTML-filen der skal iframes, er det samme som navnet der skrives i div-tag'et ".SectionHeader". Ved at navnet i div-taget ".SectionHeader" og filnavnet er ens, kan koden fra filen automatisk indsætes i tag'et med klassen ".DemoCode".
+                    </p>
+                    <pre class="brush: xml;">
 							&lt;script type="text/javascript"&gt;
 									ReturnAjaxData("GET", "html/my_shared_function.html", false, "html"); 
 							&lt;/script&gt;
 						</pre>
-
-						<p>
-							Man kan selv tilføje mere kildekode ved at indsætte det i et pre-tag således:
-					    	<pre class="brush: xml;"> &lt;pre class="brush: XXX;"&gt; &lt;!-- din kildekode her --&gt; &lt;/pre&gt; </pre> 
-					    </p>
-					    <p>
-					    	- hvor XXX sættes lig "xml" for html (uden anførselstegn), "css" for CSS og "js" for JavaScript. Her er det dog bedst at anvende "&amp;lt;" for &lt; og "&amp;gt;" for &gt; på tags med de ovennævnte reserverede klasser og script-tags, idet der som nævnt fortages script-styrede handlinger på disse klasser og at scripts i script-tags ikke har noget JQuery eller inkluderede scripts at referere til.    
-					    </p>
-
-					    <p>
-					    	Alle funktionsbeskrivelserne sorteres automatisk alfabetisk. Ligeledes genereres en "klikbar" liste automatisk over alle de beskrevne funktioner.  
-					    </p>
-					</div>
-				</div>
-
-
-				<h2 id="TOC_heading">Liste over funktioner</h2>
-
-				<div id="TOC_position"></div> <!--  Denne liste opdateres automatisk  -->
-				
-
-				<div class="Section">
-					<h2 class="SectionHeader">one_line_footer()</h2>
-					<p>
-						<span class="Desc Where">Hvor: </span> Funktionen blev udviklet til alle objekter i Kemi C, og er anvendt der. <br/>
-						<span class="Desc why">Hvorfor: </span> Hensigten med funktionen er at tilføje KVUC's footer på læringsobjekter i Kemi C. <br/>
-						<span class="Desc How">Hvordan: </span>Funktionen finder elementer med "container" og "container-fluid" og tilføjer et div-tag af klassen "container-fluid" og "vuc_footer_wrapper" efter disse. I Div-tag'et er markup til KVUC's footer til Kemi C.<br/>
-						<span class="Desc Param">Argumenter: </span>  Ingen.<br/>
-						<span class="Desc Return">Output: </span> Ingen.<br/>
-					</p>
-					<pre class="brush: js;">
+                    <p>
+                        Man kan selv tilføje mere kildekode ved at indsætte det i et pre-tag således:
+                        <pre class="brush: xml;"> &lt;pre class="brush: XXX;"&gt; &lt;!-- din kildekode her --&gt; &lt;/pre&gt; </pre>
+                    </p>
+                    <p>
+                        - hvor XXX sættes lig "xml" for html (uden anførselstegn), "css" for CSS og "js" for JavaScript. Her er det dog bedst at anvende "&amp;lt;" for &lt; og "&amp;gt;" for &gt; på tags med de ovennævnte reserverede klasser og script-tags, idet der som nævnt fortages script-styrede handlinger på disse klasser og at scripts i script-tags ikke har noget JQuery eller inkluderede scripts at referere til.
+                    </p>
+                    <p>
+                        Alle funktionsbeskrivelserne sorteres automatisk alfabetisk. Ligeledes genereres en "klikbar" liste automatisk over alle de beskrevne funktioner.
+                    </p>
+                </div>
+            </div>
+            <h2 id="TOC_heading">Liste over funktioner</h2>
+            <div id="TOC_position"></div>
+            <!--  Denne liste opdateres automatisk  -->
+            <div class="Section">
+                <h2 class="SectionHeader">one_line_footer()</h2>
+                <p>
+                    <span class="Desc Where">Hvor: </span> Funktionen blev udviklet til alle objekter i Kemi C, og er anvendt der.
+                    <br/>
+                    <span class="Desc why">Hvorfor: </span> Hensigten med funktionen er at tilføje KVUC's footer på læringsobjekter i Kemi C.
+                    <br/>
+                    <span class="Desc How">Hvordan: </span>Funktionen finder elementer med "container" og "container-fluid" og tilføjer et div-tag af klassen "container-fluid" og "vuc_footer_wrapper" efter disse. I Div-tag'et er markup til KVUC's footer til Kemi C.
+                    <br/>
+                    <span class="Desc Param">Argumenter: </span> Ingen.
+                    <br/>
+                    <span class="Desc Return">Output: </span> Ingen.
+                    <br/>
+                </p>
+                <pre class="brush: js;">
 						function one_line_footer() { 
 						    $('.container, .container-fluid').append('<div class="col-xs-12"><h6 class="footerCopywrite"> <a href="../../../kemiC_visningsite/builds/development/om_projektet.html">Digitale læringsmaterialer  Copyright 2015</a></h6></div>')
 						}
 					</pre>
-					<div class="DemoWrapper">
-						<div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
-						<div class="DemoContainer">
-							<div class="DemoCode"></div>
-							<iframe src="html/one_line_footer.html"></iframe>
-						</div>
-					</div>
-				</div> <!-- END: Section -->
-
-
-				<div class="Section">
-				    <h2 class="SectionHeader">embedlink()</h2>
-				    <p>
-				        <span class="Desc Where">Hvor: </span> Funktionen anvendes på såkaldte "visningssites" for de enkelte fag. <br/>
-				        <span class="Desc why">Hvorfor: </span> Funktionen er nødvendig idet den automatisk laver indlejringskode til lærene til anvendelse i moodle og fronter <br/>
-				        <span class="Desc How">Hvordan: </span> Funktionen har to komponenter: een til generering af link og en anden til styring fanerne til af valget mellem moodle og fronters indlejringskode. <br/>
-				        <span class="Desc Param">Argumenter: </span> Ingen  <br/>
-				        <span class="Desc Return">Output: </span> Ingen. <br/>
-				    </p>
-				    <pre class="brush: js;">
+                <div class="DemoWrapper">
+                    <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+                    <div class="DemoContainer">
+                        <div class="DemoCode"></div>
+                        <iframe src="html/one_line_footer.html"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Section -->
+            <div class="Section">
+                <h2 class="SectionHeader">embedlink()</h2>
+                <p>
+                    <span class="Desc Where">Hvor: </span> Funktionen anvendes på såkaldte "visningssites" for de enkelte fag.
+                    <br/>
+                    <span class="Desc why">Hvorfor: </span> Funktionen er nødvendig idet den automatisk laver indlejringskode til lærene til anvendelse i moodle og fronter
+                    <br/>
+                    <span class="Desc How">Hvordan: </span> Funktionen har to komponenter: een til generering af link og en anden til styring fanerne til af valget mellem moodle og fronters indlejringskode.
+                    <br/>
+                    <span class="Desc Param">Argumenter: </span> Ingen
+                    <br/>
+                    <span class="Desc Return">Output: </span> Ingen.
+                    <br/>
+                </p>
+                <pre class="brush: js;">
 				        function embedlink(obj) {
 								var UrlVarStr;
 								UrlVarStr = String(window.location).split("/", 3).join("/").replace("http", "https");
@@ -211,25 +208,31 @@
 								});
 						}
 				    </pre>
-				    <div class="DemoWrapper">
-				        <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
-				        <div class="DemoContainer">
-				            <div class="DemoCode"></div>  <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
-				            <iframe src="html/embedlink.html"></iframe>
-				        </div>
-				    </div>
-				</div>   <!-- END: Section -->
-
-				<div class="Section">
-				    <h2 class="SectionHeader">UserMsgBox()</h2>
-				    <p>
-				        <span class="Desc Where">Hvor: </span> Beskriv hvor funktionen anvendes..  <br/>
-				        <span class="Desc why">Hvorfor: </span> Beskriv behovet for denne funktion... <br/>
-				        <span class="Desc How">Hvordan: </span> En kort beskrivelse af hvordan funktionen virker... <br/>
-				        <span class="Desc Param">Argumenter: </span> Beskriv hvilke (om nogen) input/argumenter funktionen tager...  <br/>
-				        <span class="Desc Return">Output: </span> Beskriv retur data (om nogen) fra funktionen... <br/>
-				    </p>
-				    <pre class="brush: js;">
+                <div class="DemoWrapper">
+                    <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+                    <div class="DemoContainer">
+                        <div class="DemoCode"></div>
+                        <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
+                        <iframe src="html/embedlink.html"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Section -->
+            <div class="Section">
+                <h2 class="SectionHeader">UserMsgBox()</h2>
+                <p>
+                    <span class="Desc Where">Hvor: </span> Beskriv hvor funktionen anvendes..
+                    <br/>
+                    <span class="Desc why">Hvorfor: </span> Beskriv behovet for denne funktion...
+                    <br/>
+                    <span class="Desc How">Hvordan: </span> En kort beskrivelse af hvordan funktionen virker...
+                    <br/>
+                    <span class="Desc Param">Argumenter: </span> Beskriv hvilke (om nogen) input/argumenter funktionen tager...
+                    <br/>
+                    <span class="Desc Return">Output: </span> Beskriv retur data (om nogen) fra funktionen...
+                    <br/>
+                </p>
+                <pre class="brush: js;">
 				        UserMsgBox(TargetSelector, UserMsg) {
 							    var HTML = "<div class = 'MsgBox_bgr'><div id='UserMsgBox'>";
 							    HTML += '<span class="CloseClass right glyphicon glyphicon-remove"></span><span class="clear"></span>';
@@ -247,55 +250,93 @@
 							    });
 						}
 				    </pre>
-				    <div class="DemoWrapper">
-				        <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
-				        <div class="DemoContainer">
-				            <div class="DemoCode"></div>  <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
-				            <iframe src="html/UserMsgBox.html"></iframe>
-				        </div>
-				    </div>
-				</div>   <!-- END: Section -->
-
-
+                <div class="DemoWrapper">
+                    <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+                    <div class="DemoContainer">
+                        <div class="DemoCode"></div>
+                        <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
+                        <iframe src="html/UserMsgBox.html"></iframe>
+                    </div>
+                </div>
             </div>
+            <!-- END: Section -->
+            <div class="Section">
+                <h2 class="SectionHeader">modal()</h2>
+                <p>
+                    <span class="Desc Where">Hvor: </span> Anvendes fx her: https://www.vucdigital.dk/histB_kildeanalyse/kildeanalyse_2.html
+                    <br/>
+                    <span class="Desc why">Hvorfor: </span> Appender html, der muliggører fuld visning af billeder, der er resizet til en container fx.
+                    <br/>
+                    <span class="Desc How">Hvordan: </span> Ved klik på et objekt vises det i fuld skærm modal. 
+                    <br/>
+                    <span class="Desc Param">Argumenter: </span> Ingen endnu
+                    <br/>
+                    <span class="Desc Return">Output: </span> Ingen retur data
+                    <br/>
+                </p>
+                <pre class="brush: js;">
+	function modal() {
+    	$("body").append("<div class='modal fade' id='myModal' role='dialog'>" +
+	        "<div class='modal-dialog'>" +
+	        "<div class='modal-content'>" +
+	        "<div class='modal-header'>" +
+	        "<button type='button' class='close' data-dismiss='modal'>&times;</button>" +
+	        "</div>" +
+	        "<div class='modal-body'>" +
+	        "</div>" +
+	        "</div>" +
+	        "</div>" +
+	        "</div>");
+    }
+				    </pre>
+                <div class="DemoWrapper">
+                    <div class="DemoHeader"><span class="glyphicon glyphicon-chevron-right"></span> Demo</div>
+                    <div class="DemoContainer">
+                        <div class="DemoCode"></div>
+                        <!-- Koden fra nendenstående iframe indsættes automatisk i ".DemoCode" klassen -->
+                        <iframe src="html/UserMsgBox.html"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Section -->
         </div>
-        <script type="text/javascript" src="SyntaxHighlighter/scripts/shCore.js"></script>
-		<script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushJScript.js"></script>
-		<script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushCss.js"></script>
-		<script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushXml.js"></script>
-		<script type="text/javascript">
-			SyntaxHighlighter.all();
-		</script>
+    </div>
+    <script type="text/javascript" src="SyntaxHighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="SyntaxHighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript">
+    SyntaxHighlighter.all();
+    </script>
+    <script src="../library/vendor_scripts.js"></script>
+    <script src="../library/custom_scripts.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="kvucJsDoc.js"></script>
+    <script type="text/javascript">
+    ReturnAjaxData("GET", "html/footer.html", false, "html");
+    ReturnAjaxData("GET", "html/one_line_footer.html", false, "html");
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        one_line_footer();
 
-		<script src="../library/vendor_scripts.js"></script>
-        <script src="../library/custom_scripts.js"></script>
+        console.log("TATEXT: " + $("iframe").contents().find('.new_window_link').text()); // Dette fjerner "Åbn siden i sit eget vindue" i hver iframe.
 
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		<script src="kvucJsDoc.js"></script>
-		<script type="text/javascript">
-			ReturnAjaxData("GET", "html/footer.html", false, "html"); 
-			ReturnAjaxData("GET", "html/one_line_footer.html", false, "html");
-		</script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                one_line_footer();
+        $("iframe").contents().find('a.new_window_link').css("background-color", "#BADA55");
 
-                console.log("TATEXT: " + $("iframe").contents().find('.new_window_link').text()); // Dette fjerner "Åbn siden i sit eget vindue" i hver iframe.
+        $("iframe").each(function(index, element) {
+            console.log("TATEXT - " + index + " : " + $(element).contents().find('.new_window_link').height());
+            $(element).contents().find('.new_window_link').hide();
+        });
 
-                $("iframe").contents().find('a.new_window_link').css( "background-color", "#BADA55" );
+        //             $(function(){
+        // 	var f = $('iframe');
+        // 	f.load(function(){ 
+        // 		f.contents().find('.new_window_link').hide(); 
+        // 	})
+        // });
+    });
+    </script>
+</body>
 
-                $( "iframe" ).each(function( index, element ) {
-                	console.log("TATEXT - " + index + " : " + $(element).contents().find('.new_window_link').height());
-	                $(element).contents().find('.new_window_link').hide();
-	            });
-
-    //             $(function(){
-				// 	var f = $('iframe');
-				// 	f.load(function(){ 
-				// 		f.contents().find('.new_window_link').hide(); 
-				// 	})
-				// });
-            });
-        </script>
-	</body>
 </html>
